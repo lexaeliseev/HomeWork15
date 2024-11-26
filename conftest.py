@@ -32,7 +32,8 @@ def mobile_screen_setup(request):
 
 @pytest.fixture(scope='function',
                 params=[(360, 800), (1024, 768), (414, 896), (1920, 1080), (420, 800), (1280, 1024)],
-                ids=['mobile_360x800', 'desktop_1024x768', 'mobile_414x896', 'desktop_1920x1080', 'mobile_420x800', 'desktop_1280x1024'])
+                ids=['mobile_360x800', 'desktop_1024x768', 'mobile_414x896', 'desktop_1920x1080', 'mobile_420x800',
+                     'desktop_1280x1024'])
 def mobile_and_desktop_screen_setup(request):
     width, height = request.param
     browser.config.window_width = width

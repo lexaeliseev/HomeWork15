@@ -3,9 +3,9 @@
 """
 import allure
 from allure_commons.types import Severity
+from selene import browser
 
 import page.github_page
-from selene import browser
 
 github_page = page.github_page.GitHubPage()
 

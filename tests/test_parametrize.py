@@ -1,8 +1,9 @@
 import allure
 import pytest
-from selene import browser
-import page.github_page
 from allure_commons.types import Severity
+from selene import browser
+
+import page.github_page
 
 github_page = page.github_page.GitHubPage()
 
