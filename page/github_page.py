@@ -1,3 +1,6 @@
+import time
+
+import allure
 from selene import browser, be
 
 
@@ -6,10 +9,15 @@ class GitHubPage:
         pass
 
     @staticmethod
-    def desktop_window():
-        browser.element('.HeaderMenu-link--sign-up').should(be.visible).click()
-        browser.element('[name="user[email]"]').should(be.visible)
+    def sign_in_desktop():
+        with allure.step('Клик по кнопке sign-up'):
+            browser.element('.HeaderMenu-link--sign-up').click()
 
-    def mobile_window(self):
-        browser.element('.Button-label').should(be.visible).click()
-        self.desktop_window()
+        with allure.step('Поле Email отображается на странице'):
+            browser.element('[name="user[email]"]').should(be.visible)
+
+    def sign_in_mobile(self):
+        with allure.step('Клик по кнопке burger menu'):
+            browser.element(".Button--link").click()
+
+        self.sign_in_desktop()
